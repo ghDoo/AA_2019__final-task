@@ -1,13 +1,15 @@
-________________________ Final task _________________________
+                                                       Final task
 
-          Final task for 2019 Adapt front-end academy
-_____________________________________________________________
+                                        Final task for 2019 Adapt front-end academy
+__________________________________________________________________________________________________________________________________________
 
 
 
-______________ Create a single page application _____________
+                                             Create a single page application
 
-                 It should contain such pages:
+                                               It should contain such pages:
+
+
 
 - landing page
 - product page
@@ -16,5 +18,6 @@ ______________ Create a single page application _____________
 - product editing page
 
 
+
 __use:  React / axios-mock-adapter
-_____________________________________________________________
+__________________________________________________________________________________________________________________________________________
