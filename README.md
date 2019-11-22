@@ -1,10 +1,12 @@
 ________________________ Final task _________________________
+
           Final task for 2019 Adapt front-end academy
 _____________________________________________________________
 
 
 
 ______________ Create a single page application _____________
+
                  It should contain such pages:
 
 - landing page
