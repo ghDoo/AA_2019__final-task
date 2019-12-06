@@ -1,0 +1,41 @@
+/*|                                                                                                    |
+  |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
+  |                                                                                                    |
+  |                                  Navigation component styles                                       |
+  |                                                                                                    |
+__|____________________________________________________________________________________________________|__
+  |                                donatas.dereskevicius@gmail.com                                     |*/
+
+
+    @import '../../../scss/mixins';
+
+    .navigation {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 60%;
+
+        .menu {
+            display: flex;
+            list-style-type: none;
+            @include no_gaps;
+
+            &__button {
+                margin: 2rem;
+                padding: 1rem;
+                cursor: pointer;
+
+                .menu__link {
+                    font-size: 24px;
+                    color: #000000;
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+
+/*|____________________________________________________________________________________________________|
+  |                                                                                                    |
+  |                                  Adapt front-end Academy 2019                                      |
+__|____________________________________________________________________________________________________|__
+  |                                                                                                    |*/

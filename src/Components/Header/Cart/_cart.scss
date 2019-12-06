@@ -1,0 +1,37 @@
+/*|                                                                                                    |
+  |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
+  |                                                                                                    |
+  |                                     Cart component styles                                          |
+  |                                                                                                    |
+__|____________________________________________________________________________________________________|__
+  |                                donatas.dereskevicius@gmail.com                                     |*/
+
+
+    @import '../../../scss/mixins';
+
+    .cart {
+        @include flex_center;
+        flex-direction: column;
+        width: 20%;
+
+        &__img {
+            background-image: url("../../../img/cart.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 1rem;
+            height: 100%;
+            width: 100%;
+        }
+
+        &__title {
+            font-size: 20px;
+            @include no_gaps;
+        }
+    }
+
+/*|____________________________________________________________________________________________________|
+  |                                                                                                    |
+  |                                  Adapt front-end Academy 2019                                      |
+__|____________________________________________________________________________________________________|__
+  |                                                                                                    |*/

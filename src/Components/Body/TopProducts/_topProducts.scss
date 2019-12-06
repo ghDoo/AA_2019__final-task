@@ -1,0 +1,33 @@
+/*|                                                                                                    |
+  |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
+  |                                                                                                    |
+  |                               Get Top Products component styles                                    |
+  |                                                                                                    |
+__|____________________________________________________________________________________________________|__
+  |                                donatas.dereskevicius@gmail.com                                     |*/
+
+    .list {
+        display: flex;
+        flex-direction: column;
+        height: 90vh;
+        overflow: hidden;
+
+        &-item {
+            display: flex;
+            
+            &__image {
+                width: 20%;
+            }
+
+            &__text {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+    }
+
+/*|____________________________________________________________________________________________________|
+  |                                                                                                    |
+  |                                  Adapt front-end Academy 2019                                      |
+__|____________________________________________________________________________________________________|__
+  |                                                                                                    |*/
