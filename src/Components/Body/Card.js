@@ -7,10 +7,10 @@ __|_____________________________________________________________________________
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
 
-    import React                from "react";
-    import history              from "../../history";
-    import { NewProductCard }   from "./NewProductCard";
-    import { Carousel }         from "./Carousel";
+    import React from "react";
+    import history from "../../history";
+    import { NewProductCard } from "./NewProductCard";
+    import { Carousel } from "./Carousel";
 
     const Card = (props) => {
 
@@ -28,7 +28,7 @@ __|_____________________________________________________________________________
                             <p className="card__title"> {data.name} </p>
                             <p  className="card__price"> {data.price} / kg </p>
                             <button className="card__button" type="button" onClick={(e)=> {props.EditProduct(data.id, e); history.push('/edit');}}> EDIT </button>
-                            <button className="card__button--delete" type="button" onClick={(e)=> {props.DeleteProduct(data.id, e); history.push('/admin');}}> DELETE </button>
+                            <button className="card__button--delete" type="button" onClick={(e)=> {props.DeleteProduct(data.id, e); history.push('/');}}> DELETE </button>
                             <p   className="card__description"> {data.description} </p>
                         </li>
                     ))}

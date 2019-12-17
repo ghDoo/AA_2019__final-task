@@ -14,6 +14,7 @@ __|_____________________________________________________________________________
     //          ADD new product to API
     export const AddProduct = (item) => dispatch => {
         ApiFactory.getInstance().post('/api/products', item)
+        .then(res => res.data)
         .then((item) => dispatch({
             type: NEW_ITEM,
             payload: item

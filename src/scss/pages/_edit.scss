@@ -1,0 +1,70 @@
+/*|                                                                                                    |
+  |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
+  |                                                                                                    |
+  |                                       EDIT items styles                                            |
+  |                                                                                                    |
+__|____________________________________________________________________________________________________|__
+  |                                donatas.dereskevicius@gmail.com                                     |*/
+
+
+    .edit {
+        @include flex_center;
+        grid-area: cont;
+        flex-direction: column;
+
+        &__title {
+            font-family: 'Rye', cursive;
+            font-size: 1.5rem;
+            margin: 0;
+            padding: 0 0 1rem 0;
+            text-align: center;
+            width: 100%;
+        }
+
+        &-form {
+            @include flex_center;
+            flex-direction: column;
+
+            &__label {
+                width: 100%;
+
+                &_title {
+                    font-family: 'Oswald', sans-serif;
+                    font-size: 1rem;
+                }
+
+                &_input {
+                    @include small_border_shadow;
+                    text-align: center;
+                    height: 3vh;
+                    width: 20vw;
+                }
+
+                textarea {
+                    height: 10vh;
+                }
+
+                &_upload {
+                    background-color: #ffffff;
+                    border: none;
+                }
+            }
+
+            &__button {
+                @include standart_button;
+                margin: 2rem;
+                padding: 0.5rem 1rem;
+                cursor: pointer;
+            }
+
+            &__button:hover {
+                @include standart_button_hover;
+            }
+        }
+    }
+
+/*|____________________________________________________________________________________________________|
+  |                                                                                                    |
+  |                                  Adapt front-end Academy 2019                                      |
+__|____________________________________________________________________________________________________|__
+  |                                                                                                    |*/

@@ -7,22 +7,32 @@ __|_____________________________________________________________________________
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
 
-    import React, {Component} from 'react';
+    import React, { Component } from 'react';
     import { connect } from 'react-redux';
     import PropTypes from 'prop-types';
-    import {GetProducts} from '../Actions/GetDataActions';
-    import {EditProduct} from '../Actions/PostDataActions';
-    import {UpdateProduct} from '../Actions/PostDataActions';
+    import history from "../history";
+    import { GetProducts } from '../Actions/GetDataActions';
+    import { EditProduct, UpdateProduct } from '../Actions/PostDataActions';
 
     class Edit extends Component {
 
         constructor(props) {
             super(props);
             this.state = {
-                name: this.props.edit.name,
-                description: this.props.edit.description,
-                price: this.props.edit.price,
-                images: []
+                id: this.props.edit.id,
+                name: '',
+                description: '',
+                price: '',
+                images: [{
+                    name: this.props.edit.name,
+                    url: this.props.edit.url
+                }, {
+                    name: this.props.edit.name,
+                    url: this.props.edit.url
+                }, {
+                    name: this.props.edit.name,
+                    url: this.props.edit.url
+                }]
             };
 
             console.log(this.state);
@@ -31,24 +41,28 @@ __|_____________________________________________________________________________
             this.onSubmit = this.onSubmit.bind(this);
         };
 
-        componentDidMount() {
-           // this.props.EditProduct();
-           // this.props.GetProducts();
-           // console.log(this.props.id);
-           this.setState(this.props.edit);
-        }
-
         onSubmit = (event) => {
             event.preventDefault();
 
             const item = {
+                id: this.props.edit.id,
                 name: this.state.name,
                 description: this.state.description,
                 price: this.state.price,
-                images: []
+                images: [{
+                    name: this.props.edit.name,
+                    url: this.props.edit.images[0].url
+                }, {
+                    name: this.props.edit.name,
+                    url: this.props.edit.images[1].url
+                }, {
+                    name: this.props.edit.name,
+                    url: this.props.edit.images[2].url
+                }]
             };
 
-            this.props.UpdateProduct(item);
+            this.props.UpdateProduct(this.props.edit.id, item);
+            history.push('/');
         };
 
         onChange = (event) => {
@@ -59,33 +73,27 @@ __|_____________________________________________________________________________
 
         render() {
 
-            const { name, description, price } = this.state;
-
-            const { edit } = this.props;
-
-            console.log(edit);
-
             return (
                 <div className="edit">
-                    <h1 className="edit__title">enter New product</h1> 
+                    <p className="edit__title"> edit {this.props.edit.name} </p> 
                     <form className="edit-form" onSubmit={this.onSubmit}>
                     
-                        <label className="name-label">
-                            <h3 className="name-label__title">Product name</h3>
-                            <input className="name-label__input" type="text" name="name" value={name} onChange={this.onChange} />
+                        <label className="edit-form__label">
+                            <h3 className="edit-form__label_title">Product name</h3>
+                            <input className="edit-form__label_input" type="text" name="name" value={this.state.name} onChange={this.onChange} />
                             
                         </label>
                     
-                        <label className="description-label">
-                            <h3 className="description-label__title">Product description</h3>
-                            <textarea className="description-label__input" type="text" name="description" value={description} onChange={this.onChange} />
+                        <label className="edit-form__label">
+                            <h3 className="edit-form__label_title">Product description</h3>
+                            <textarea className="edit-form__label_input" type="text" name="description" value={this.state.description} onChange={this.onChange} />
                         </label>
     
-                        <label className="price-label">
-                            <h3 className="price-label__title">Product price / kg</h3>
-                            <input className="price-label__input" type="number" name="price" value={price} onChange={this.onChange} />
+                        <label className="edit-form__label">
+                            <h3 className="edit-form__label_title">Product price / kg</h3>
+                            <input className="edit-form__label_input" type="number" name="price" value={this.state.price} onChange={this.onChange} />
                         </label>
-                        <button className="edit-form__submit" type="submit"> Add </button>
+                        <button className="edit-form__button" type="submit"> Add </button>
                     </form>
                 </div>
             );
@@ -108,7 +116,7 @@ __|_____________________________________________________________________________
     const mapDispatchToProps = dispatch => ({
         GetProducts: () => dispatch(GetProducts()),
         EditProduct: (id) => dispatch(EditProduct(id)),
-        UpdateProduct: (edit) => dispatch(UpdateProduct(edit))
+        UpdateProduct: (id, item) => dispatch(UpdateProduct(id, item))
 
     });
 

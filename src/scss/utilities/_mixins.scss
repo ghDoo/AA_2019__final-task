@@ -27,6 +27,28 @@ __|_____________________________________________________________________________
         padding: 0;
     }
 
+    @mixin standart_button {
+        background-color: #fafafa;
+        border: solid #ffffff 1px;
+            -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);
+            -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);
+    }
+
+    @mixin standart_button_hover {
+        background-color: #ececec;
+            -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.7);
+            -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.7);
+        box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.7);
+    }
+
+    @mixin small_border_shadow {
+        border: none;
+            -webkit-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+            -moz-box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+        box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.5);
+    }
+
 /*|____________________________________________________________________________________________________|
   |                                                                                                    |
   |                                  Adapt front-end Academy 2019                                      |
