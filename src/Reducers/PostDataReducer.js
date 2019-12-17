@@ -1,27 +1,45 @@
 /*|                                                                                                    |
   |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
   |                                                                                                    |
-  |                                      Footer component                                              |
+  |                                      POST data Reducer                                              |
   |                                                                                                    |
 __|____________________________________________________________________________________________________|__
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
 
-    import React from 'react';
+    import {NEW_ITEM, EDIT_ITEM, UPDATE_ITEM, DELETE_ITEM} from '../Actions/ActionTypes';
 
-    const Footer = () => {
-
-        return (
-            <footer className="footer">
-                <div className="footer-box">
-                    <p className="footer-box__text"> Mr. Potayto Potato online shop. Best seller in 2019 ! </p>
-                    <p className="footer-box__text"> All Rights Reserved </p>
-                </div>
-            </footer>
-        );
+    const initState = {
+        items: [],
+        item: {}
     };
 
-    export {Footer};
+    export default (state = initState, action) => {
+        switch(action.type){
+            case NEW_ITEM:
+                return {
+                    ...state,
+                    item: action.payload,
+                }
+            case EDIT_ITEM:
+                return {
+                    ...state,
+                    item: action.payload
+                }
+            case UPDATE_ITEM:
+                return {
+                    ...state,
+                    item: action.payload
+                }
+            case DELETE_ITEM:
+                return {
+                    ...state,
+                    item: action.payload
+                }
+            default:
+                return state;
+        };
+    };
 
 /*|____________________________________________________________________________________________________|
   |                                                                                                    |

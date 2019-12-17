@@ -1,27 +1,39 @@
 /*|                                                                                                    |
   |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
   |                                                                                                    |
-  |                                      Footer component                                              |
+  |                                    Logo component styles                                           |
   |                                                                                                    |
 __|____________________________________________________________________________________________________|__
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
 
-    import React from 'react';
+    .logo {
+        @include flex_center;
+        flex-direction: column;
+        width: 20%;
+        cursor: pointer;
 
-    const Footer = () => {
+        &__img {
+            background-image: url("../../Assets/logo.png");
+            background-position: center;
+            background-size: contain;
+            background-repeat: no-repeat;
+            height: 100%;
+            width: 100%;
+        }
 
-        return (
-            <footer className="footer">
-                <div className="footer-box">
-                    <p className="footer-box__text"> Mr. Potayto Potato online shop. Best seller in 2019 ! </p>
-                    <p className="footer-box__text"> All Rights Reserved </p>
-                </div>
-            </footer>
-        );
-    };
+        &__title {
+            font-family: 'Rye', cursive;
+            font-size: 2rem;
+            color: #000000;
+            @include no_gaps;
+            text-decoration: none;
+        }
 
-    export {Footer};
+        &__title:hover {
+            font-size: 2.2rem;
+        }
+    }
 
 /*|____________________________________________________________________________________________________|
   |                                                                                                    |

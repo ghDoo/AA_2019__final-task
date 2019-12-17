@@ -1,27 +1,26 @@
 /*|                                                                                                    |
   |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
   |                                                                                                    |
-  |                                      Footer component                                              |
+  |                                     Header logo component                                          |
   |                                                                                                    |
 __|____________________________________________________________________________________________________|__
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
 
-    import React from 'react';
+    import React from "react";
+    import {Link} from "react-router-dom";
 
-    const Footer = () => {
+    const Logo = () => {
 
         return (
-            <footer className="footer">
-                <div className="footer-box">
-                    <p className="footer-box__text"> Mr. Potayto Potato online shop. Best seller in 2019 ! </p>
-                    <p className="footer-box__text"> All Rights Reserved </p>
-                </div>
-            </footer>
+            <section className="logo">
+                <div className="logo__img" alt="logo"></div>
+                <Link className="logo__title" to="/"> Mr. Potayto Potato </Link>
+            </section>
         );
     };
 
-    export {Footer};
+    export {Logo};
 
 /*|____________________________________________________________________________________________________|
   |                                                                                                    |

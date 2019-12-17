@@ -1,27 +1,31 @@
 /*|                                                                                                    |
   |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
   |                                                                                                    |
-  |                                      Footer component                                              |
+  |                                         scss mixins                                                |
   |                                                                                                    |
 __|____________________________________________________________________________________________________|__
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
 
-    import React from 'react';
+    @mixin grid_layout {
+        grid-template-columns:  [c1] 1fr [c2] 1fr [c3] 1fr [c4];
+        grid-template-rows:     [r1] 1fr [r2] 5fr [r3] 1fr [r4];
 
-    const Footer = () => {
+        grid-template-areas:    "head head head"
+                                "cont cont cont"
+                                "foot foot foot";
+    }
 
-        return (
-            <footer className="footer">
-                <div className="footer-box">
-                    <p className="footer-box__text"> Mr. Potayto Potato online shop. Best seller in 2019 ! </p>
-                    <p className="footer-box__text"> All Rights Reserved </p>
-                </div>
-            </footer>
-        );
-    };
+    @mixin  flex_center {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
-    export {Footer};
+    @mixin no_gaps {
+        margin: 0;
+        padding: 0;
+    }
 
 /*|____________________________________________________________________________________________________|
   |                                                                                                    |

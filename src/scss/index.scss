@@ -6,14 +6,30 @@
 __|____________________________________________________________________________________________________|__
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
+  
+//          fonts
+    @import url('https://fonts.googleapis.com/css?family=Rye|Fredericka+the+Great|Oswald|Gravitas+One|Alegreya+SC&display=swap');
 
-    @import "./variables";                          // < _variables.scss from scss folder ( this file contains all variables used for styling ).
-    @import "./mixins";                             // < _mixins.scss from scss folder ( keeping all mixin's in this file ).
-    @import "./layout_and_body";                    // < _layout_and_body.scss from scss folder ( initializing styles and layout setup ).
-    //@import "../Components/Header/header";          // < _header.scss from scss folder ( this file contains rules for header block ).
-    //@import "../Pages/Home/home";                   // < _content.scss from scss folder ( this file contains rules for all website content ).
-    //@import "../Pages/Products/products";
-    //@import "../Components/Footer/footer";          // < _footer.scss from scss folder ( this file contains styles for footer block ).
+//          utilities      
+    @import "./utilities/variables";
+    @import "./utilities/mixins";
+    @import "./utilities/layout";
+
+//          pages
+    @import "./pages/home";
+    @import "./pages/products";
+    @import "./pages/add";
+
+//          components
+    @import "./components/header";
+    @import "./components/logo";
+    @import "./components/navigation";
+    @import "./components/cart";
+    @import "./components/introduction";
+    @import "./components/topProducts";
+    @import "./components/card";
+    @import "./components/carousel";
+    @import "./components/footer";
 
 /*|____________________________________________________________________________________________________|
   |                                                                                                    |

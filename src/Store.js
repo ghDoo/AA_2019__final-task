@@ -1,28 +1,32 @@
 /*|                                                                                                    |
   |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
   |                                                                                                    |
-  |                                      Footer component                                              |
+  |                                         Redux store                                                |
   |                                                                                                    |
 __|____________________________________________________________________________________________________|__
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
 
-    import React from 'react';
-
-    const Footer = () => {
-
-        return (
-            <footer className="footer">
-                <div className="footer-box">
-                    <p className="footer-box__text"> Mr. Potayto Potato online shop. Best seller in 2019 ! </p>
-                    <p className="footer-box__text"> All Rights Reserved </p>
-                </div>
-            </footer>
-        );
-    };
-
-    export {Footer};
-
+    import {createStore, applyMiddleware, compose} from "redux";
+    import thunk from "redux-thunk";
+    
+    import Reducer from "./Reducers/Reducer";
+    
+    const initState = {};
+    
+    const middleware = [thunk];
+    
+    const store = createStore (
+        Reducer, 
+        initState,
+        compose (
+            applyMiddleware(...middleware),
+            window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+        )
+    );
+    
+    export {store};
+  
 /*|____________________________________________________________________________________________________|
   |                                                                                                    |
   |                                  Adapt front-end Academy 2019                                      |

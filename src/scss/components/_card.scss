@@ -1,0 +1,139 @@
+/*|                                                                                                    |
+  |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
+  |                                                                                                    |
+  |                                     Card component styles                                          |
+  |                                                                                                    |
+__|____________________________________________________________________________________________________|__
+  |                                donatas.dereskevicius@gmail.com                                     |*/
+
+
+    .items-box {
+        display: inline-block;
+        @include no_gaps;
+        text-align: center;
+
+        .card {
+            display: inline-block;
+            position: relative;
+            flex-direction: column;
+            background-color: #fafafa;
+            border: solid #ffffff 1px;
+                -webkit-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.5);
+                -moz-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.5);
+            box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.5);
+            margin: 5rem 3rem;
+            list-style: none;
+            height: 70vh;
+            width: 25vw;
+            overflow-x: hidden;
+            overflow-y: auto;
+
+            &__img {
+                background-image: url("../../Assets/add.png");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                    -webkit-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.5);
+                    -moz-box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.5);
+                box-shadow: 0px 0px 7px 2px rgba(0,0,0,0.5);
+                margin-bottom: 4rem;
+                height: 70%;
+                width: 100%;
+            }
+    
+            &__title {
+                font-family: 'Rye', cursive;
+                font-size: 2rem;
+                text-align: center;
+            }
+
+            &__price {
+                font-family: 'Fredericka the Great', cursive;
+                font-size: 1rem;
+            }
+
+            &__button {
+                background-color: #fafafa;
+                border: solid #ffffff 1px;
+                    -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);
+                    -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);
+                box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);
+                font-family: 'Alegreya SC', serif;
+                font-size: 1rem;
+                color: #000000;
+                margin: 0 2rem;
+                padding: 0.5rem 2rem;
+                text-decoration: none;
+                cursor: pointer;
+
+                &--delete {
+                    background-color: #ffe7e7;
+                    border: solid #c00000 1px;
+                        -webkit-box-shadow: 0px 0px 7px 1px rgba(255, 255, 255, 0.7);
+                        -moz-box-shadow: 0px 0px 7px 1px rgba(255, 255, 255, 0.7);
+                    box-shadow: 0px 0px 7px 1px rgba(255, 255, 255, 0.7);
+                    font-family: 'Alegreya SC', serif;
+                    font-size: 1rem;
+                    color: #000000;
+                    margin: 0 2rem;
+                    padding: 0.5rem 2rem;
+                    text-decoration: none;
+                    cursor: pointer;
+                }
+
+                &--delete:hover {
+                    background-color: #ff8181;
+                    border: solid #c00000 1px;
+                        -webkit-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);
+                        -moz-box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);
+                    box-shadow: 0px 0px 4px 0px rgba(0,0,0,0.5);
+                    color: #ffffff;
+                }
+
+                &--buy {
+                    margin-left: 0.5rem;
+                }
+            }
+
+            &__button:hover {
+                background-color: #ececec;
+                    -webkit-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.7);
+                    -moz-box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.7);
+                box-shadow: 0px 0px 7px 0px rgba(0,0,0,0.7);
+            }
+
+            &__description {
+                font-family: 'Oswald', sans-serif;
+                font-size: 1rem;
+                padding: 2rem;
+                text-align: center;
+            }
+        }
+
+        .card:hover {
+                -webkit-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.8);
+                -moz-box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.8);
+            box-shadow: 0px 0px 10px 2px rgba(0,0,0,0.8);
+        }
+
+        .card::-webkit-scrollbar {
+            width: 0.5rem;
+        }
+         
+        .card::-webkit-scrollbar-track {
+                -webkit-box-shadow: inset 0px 0px 5px 2px rgba(190, 190, 190, 0.7);
+                -moz-box-shadow: inset 0px 0px 5px 2px rgba(190, 190, 190, 0.7);
+            box-shadow: inset 0px 0px 5px 2px rgba(190, 190, 190, 0.7);
+        }
+         
+        .card::-webkit-scrollbar-thumb {
+          background-color: #bbbbbb;
+          outline: solid #ececec 1px;
+        }
+    }
+
+/*|____________________________________________________________________________________________________|
+  |                                                                                                    |
+  |                                  Adapt front-end Academy 2019                                      |
+__|____________________________________________________________________________________________________|__
+  |                                                                                                    |*/

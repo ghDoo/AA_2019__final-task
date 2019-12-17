@@ -1,26 +1,26 @@
 /*|                                                                                                    |
   |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
   |                                                                                                    |
-  |                                       Page header block                                            |
+  |                                      Header component                                              |
   |                                                                                                    |
 __|____________________________________________________________________________________________________|__
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
 
     import React from 'react';
-    import {Logo} from './Logo/Logo';
-    import {Navigation} from './Navigation/Navigation';
-    import {Cart} from './Cart/Cart';
+    import {Logo} from './Logo';
+    import {Navigation} from './Navigation';
+    import CartImage from './CartImage';
 
-    import './_header.scss';
+    const Header = (props) => {
 
-    const Header = () => {
+        const admin = props.admin;
 
         return (
             <header className="header">
                 <Logo />
-                <Navigation />
-                <Cart />
+                <Navigation admin={admin} />
+                <CartImage />
             </header>
         );
     };

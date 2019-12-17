@@ -1,27 +1,30 @@
 /*|                                                                                                    |
   |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
   |                                                                                                    |
-  |                                      Footer component                                              |
+  |                                        Admin Reducer                                               |
   |                                                                                                    |
 __|____________________________________________________________________________________________________|__
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
 
-    import React from 'react';
+    import {ADMIN_STATUS} from '../Actions/ActionTypes';
 
-    const Footer = () => {
-
-        return (
-            <footer className="footer">
-                <div className="footer-box">
-                    <p className="footer-box__text"> Mr. Potayto Potato online shop. Best seller in 2019 ! </p>
-                    <p className="footer-box__text"> All Rights Reserved </p>
-                </div>
-            </footer>
-        );
+    const initState = {
+        items: [],
+        item: {}
     };
 
-    export {Footer};
+    export default (state = initState, action) => {
+        switch(action.type){
+            case ADMIN_STATUS:
+                return {
+                    ...state,
+                    item: action.payload
+                }
+            default:
+                return state;
+        };
+    };
 
 /*|____________________________________________________________________________________________________|
   |                                                                                                    |

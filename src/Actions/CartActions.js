@@ -1,27 +1,49 @@
 /*|                                                                                                    |
   |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
   |                                                                                                    |
-  |                                      Footer component                                              |
+  |                                        Cart actions                                                |
   |                                                                                                    |
 __|____________________________________________________________________________________________________|__
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
+  
+    import ApiFactory from '../ApiFactory';
+    import {ADD_ITEM, REMOVE_ITEM, BUY_ITEMS, CLEAR_CART} from './ActionTypes';
 
-    import React from 'react';
 
-    const Footer = () => {
-
-        return (
-            <footer className="footer">
-                <div className="footer-box">
-                    <p className="footer-box__text"> Mr. Potayto Potato online shop. Best seller in 2019 ! </p>
-                    <p className="footer-box__text"> All Rights Reserved </p>
-                </div>
-            </footer>
-        );
+    //          ADD item to cart
+    export const AddToCart = (item) => dispatch => {
+        dispatch({
+            type: ADD_ITEM,
+            payload: item
+        });
     };
 
-    export {Footer};
+    //          REMOVE item to cart
+    export const RemoveFromCart = (item) => dispatch => {
+        dispatch({
+            type: REMOVE_ITEM,
+            payload: item
+        });
+    };
+
+    //          BUY item
+    export const BuyFromCart = (items) => dispatch => {
+        ApiFactory.getInstance().post('/api/buy', { bought: items })
+        .then(() => {
+            dispatch({ 
+                type: BUY_ITEMS,
+                payload: items
+            });
+        });
+    };
+
+    //          CLEAR cart
+    export const ClearCart = () => dispatch => {
+            dispatch({ 
+                type: CLEAR_CART
+            });
+    };
 
 /*|____________________________________________________________________________________________________|
   |                                                                                                    |

@@ -1,27 +1,44 @@
 /*|                                                                                                    |
   |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
   |                                                                                                    |
-  |                                      Footer component                                              |
+  |                                       App scss setup                                               |
   |                                                                                                    |
 __|____________________________________________________________________________________________________|__
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
 
-    import React from 'react';
+    *, *::after, *::before {
+        box-sizing: border-box;
+    }
 
-    const Footer = () => {
+    body {
+        background-color: #ffffff;
+        font-size: 24px;
+        @include no_gaps;
+        overflow-x: hidden;
 
-        return (
-            <footer className="footer">
-                <div className="footer-box">
-                    <p className="footer-box__text"> Mr. Potayto Potato online shop. Best seller in 2019 ! </p>
-                    <p className="footer-box__text"> All Rights Reserved </p>
-                </div>
-            </footer>
-        );
-    };
+        .app {
+            display: grid;
+            position: relative;
+            @include grid_layout;
+            height: 100vh;
+        }
+    }
 
-    export {Footer};
+    body::-webkit-scrollbar {
+        width: 0.5rem;
+    }
+     
+    body::-webkit-scrollbar-track {
+            -webkit-box-shadow: inset 0px 0px 5px 2px rgba(190, 190, 190, 0.7);
+            -moz-box-shadow: inset 0px 0px 5px 2px rgba(190, 190, 190, 0.7);
+        box-shadow: inset 0px 0px 5px 2px rgba(190, 190, 190, 0.7);
+    }
+     
+    body::-webkit-scrollbar-thumb {
+      background-color: #bbbbbb;
+      outline: solid #ececec 1px;
+    }
 
 /*|____________________________________________________________________________________________________|
   |                                                                                                    |

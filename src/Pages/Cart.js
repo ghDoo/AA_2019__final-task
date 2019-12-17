@@ -1,28 +1,33 @@
 /*|                                                                                                    |
   |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
   |                                                                                                    |
-  |                                      Footer component                                              |
+  |                                        Cart component                                              |
   |                                                                                                    |
 __|____________________________________________________________________________________________________|__
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
 
     import React from 'react';
+    import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
+    import CartItems from '../Components/Body/CartItems';
 
-    const Footer = () => {
+    const Cart = () => {
 
         return (
-            <footer className="footer">
-                <div className="footer-box">
-                    <p className="footer-box__text"> Mr. Potayto Potato online shop. Best seller in 2019 ! </p>
-                    <p className="footer-box__text"> All Rights Reserved </p>
+            <Router>
+                <div className="items">
+                    <Switch> 
+                        <Route>
+                            <CartItems />
+                        </Route>
+                    </Switch>
                 </div>
-            </footer>
+            </Router>
         );
     };
-
-    export {Footer};
-
+    
+   export {Cart};
+  
 /*|____________________________________________________________________________________________________|
   |                                                                                                    |
   |                                  Adapt front-end Academy 2019                                      |

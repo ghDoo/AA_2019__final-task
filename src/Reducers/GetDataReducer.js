@@ -1,28 +1,36 @@
 /*|                                                                                                    |
   |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
   |                                                                                                    |
-  |                                      Footer component                                              |
+  |                                      GET data Reducer                                              |
   |                                                                                                    |
 __|____________________________________________________________________________________________________|__
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
 
-    import React from 'react';
+    import {GET_ITEMS, TOP_ITEMS} from '../Actions/ActionTypes';
 
-    const Footer = () => {
-
-        return (
-            <footer className="footer">
-                <div className="footer-box">
-                    <p className="footer-box__text"> Mr. Potayto Potato online shop. Best seller in 2019 ! </p>
-                    <p className="footer-box__text"> All Rights Reserved </p>
-                </div>
-            </footer>
-        );
+    const initState = {
+        items: [],
+        item: {}
     };
 
-    export {Footer};
-
+    export default (state = initState, action) => {
+        switch(action.type){
+            case GET_ITEMS:
+                return {
+                    ...state,
+                    items: action.payload
+                }
+            case TOP_ITEMS:
+                return {
+                    ...state,
+                    items: action.payload.filter((items) => items.id <= 3)
+                }
+            default:
+                return state;
+        };
+    };
+  
 /*|____________________________________________________________________________________________________|
   |                                                                                                    |
   |                                  Adapt front-end Academy 2019                                      |

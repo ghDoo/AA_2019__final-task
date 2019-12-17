@@ -1,27 +1,28 @@
 /*|                                                                                                    |
   |                 Adapt front-end Academy 2019 | final task by Donatas Dereškevičius                 |
   |                                                                                                    |
-  |                                      Footer component                                              |
+  |                                    Introduction component                                          |
   |                                                                                                    |
 __|____________________________________________________________________________________________________|__
   |                                donatas.dereskevicius@gmail.com                                     |*/
 
 
-    import React from 'react';
+    import React from "react";
+    import {Link} from "react-router-dom";
 
-    const Footer = () => {
+    const Introduction = () => {
 
         return (
-            <footer className="footer">
-                <div className="footer-box">
-                    <p className="footer-box__text"> Mr. Potayto Potato online shop. Best seller in 2019 ! </p>
-                    <p className="footer-box__text"> All Rights Reserved </p>
-                </div>
-            </footer>
+            <div className="introduction">
+                <h1 className="introduction__title"> DISCOVER A NEW WORLD OF POTATES </h1>
+                <p  className="introduction__text"> Potato, Solanum tuberosum, is an herbaceous perennial plant in the family Solanaceae which is grown for its edible tubers. The potato plant has a branched stem and alternately arranged leaves consisting of leaflets which are both of unequal size and shape. </p>
+                <Link className="introduction__button" to="/products"> Start shopping </Link>
+                <p  className="introduction__footer"> Look below to see what kind of potates exist and possible to buy in our shop. </p>
+            </div>
         );
     };
 
-    export {Footer};
+    export {Introduction};
 
 /*|____________________________________________________________________________________________________|
   |                                                                                                    |
