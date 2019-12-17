@@ -32,9 +32,10 @@ __|_____________________________________________________________________________
         };
 
         componentDidMount() {
-          //  this.props.EditProduct();
+           // this.props.EditProduct();
            // this.props.GetProducts();
            // console.log(this.props.id);
+           this.setState(this.props.edit);
         }
 
         onSubmit = (event) => {
@@ -59,6 +60,10 @@ __|_____________________________________________________________________________
         render() {
 
             const { name, description, price } = this.state;
+
+            const { edit } = this.props;
+
+            console.log(edit);
 
             return (
                 <div className="edit">
@@ -97,13 +102,13 @@ __|_____________________________________________________________________________
 
     const mapStateToProps = state => ({
         data: state.data.items,
-        edit: state.edit.edit
+        edit: state.edit.item
     });
 
     const mapDispatchToProps = dispatch => ({
         GetProducts: () => dispatch(GetProducts()),
-        EditProduct: (add) => dispatch(EditProduct(add)),
-        UpdateProduct: (add) => dispatch(UpdateProduct(add))
+        EditProduct: (id) => dispatch(EditProduct(id)),
+        UpdateProduct: (edit) => dispatch(UpdateProduct(edit))
 
     });
 

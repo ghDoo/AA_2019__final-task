@@ -8,13 +8,11 @@ __|_____________________________________________________________________________
 
 
     import React, {Component} from "react";
-    import PropTypes from 'prop-types';
+    import PropTypes from "prop-types";
     import {connect} from 'react-redux';
     import {GetProducts} from '../Actions/GetDataActions';
     import {AddToCart} from '../Actions/CartActions';
-    import {AddProduct} from '../Actions/PostDataActions';
-    import {EditProduct}        from "../Actions/PostDataActions";
-    import {DeleteProduct} from "../Actions/PostDataActions";
+    import {AddProduct, EditProduct, DeleteProduct} from '../Actions/PostDataActions';
     import {Card} from "../Components/Body/Card";
 
     class Products extends Component {
